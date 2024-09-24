@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+    <title>Navbar</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="/">Home</a>
+    {% if session.user %}
+        <a href="/family">Family</a>
+        <a href="/personal">Personal</a>
+        <a href="/settings">Settings</a>
+        {% if session.user_role == 'admin' %}
+            <a href="/admin">Admin</a>
+        {% endif %}
+    {% else %}
+        <a href="/login">Login</a>
+        <a href="/sign-up">Sign Up</a>
+    {% endif %}
+  </div>
+
+  {% block content %}
+  <!-- Default content (if any) -->
+  {% endblock %}
+</body>
+</html>

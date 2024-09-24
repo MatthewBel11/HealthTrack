@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/createAccount.css">
+</head>
+
+{% extends "navbar.html" %}
+
+{% block content %}
+
+<body>
+<div class="main-container">
+    <div class="form-container">
+        <h2 class="create">Create An Account!</h2>
+         {% if form %}
+             <form method="POST">
+                <div class="form-field-container">
+                    {{ form.csrf_token }}
+                     <label for="username">Username:</label><br>
+                     {{ form.username(type='text') }}
+                     {% for error in form.username.errors %}
+                     {{ error }}
+                     {% endfor %}
+                 </div>
+
+                <div class="form-field-container">
+                     <label for="email">Email:</label><br>
+                     {{ form.email(type='email') }}
+                     {% for error in form.email.errors %}
+                     {{ error }}
+                     {% endfor %}
+                 </div>
+
+                 <div class="form-field-container">
+                     <label for="phone">Phone number:</label><br>
+                     {{ form.phone(type='tel') }}
+                     {% for error in form.phone.errors %}
+                     {{ error }}
+                     {% endfor %}
+                 </div>
+
+                 <div class="form-field-container">
+                     <label for="password">Password:</label><br>
+                     {{ form.password(type='password') }}
+                     {% for error in form.password.errors %}
+                     {{ error }}
+                     {% endfor %}
+                 </div>
+
+                 <div class="form-field-container">
+                     <label for="confirm-password">Confirm password:</label><br>
+                     {{ form.confirm_password(type='password') }}
+                     {% for error in form.confirm_password.errors %}
+                     {{ error }}
+                     {% endfor %}
+                 </div>
+
+                 <div class="form-field-container">
+                     {{ form.submit(type='submit') }}
+                 </div>
+
+             </form>
+         {% endif %}
+    </div>
+</div>
+</body>
+
+{% endblock %}
+
+</html>

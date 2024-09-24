@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/css/home.css">
+</head>
+
+{% extends "navbar.html" %}
+
+{% block content %}
+    <div class="title-container">
+        <h1 class="h1-main">
+            <span class="green-text">Health</span><span class="white-text">Track</span>
+        </h1>
+        <h3 class="h1-sub">The online health diary.</h3>
+    </div>
+
+    <div class="main-container">
+        <div class="about-container">
+
+            <div class="left-side-p-container">
+                <h1 class="about-title-left"> So what is HealthTrack?</h1>
+                <p class="left-side-paragraph">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            </div>
+
+            <div class="right-side-p-container">
+                <h1 class="about-title-right"> What do we hope to achieve?</h1>
+                <p class="right-side-paragraph">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            </div>
+        </div>
+
+        <div class="articles-container">
+            <h1 class="articles-title">Articles We Recommend!</h1>
+
+            <div class="article-image-container">
+
+                <a href="https://www.health.harvard.edu/topics/exercise-and-fitness"><div class="article 1"></div></a>
+
+                <div class="article 1" onclick="window.location.href = 'https://www.health.harvard.edu/topics/exercise-and-fitness';"></div>
+                <div class="article 2" onclick="window.location.href = 'https://www.bbc.com/future/article/20180126-the-100-most-nutritious-foods';"></div>
+                <div class="article 3" onclick="window.location.href = 'https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5977566/';"></div>
+                <div class="article 4" onclick="window.location.href = 'https://humanhealthproject.org/?gad_source=1&gclid=CjwKCAjwgdayBhBQEiwAXhMxtvLlYsZQPnVa5H5f5wEczhzOmSgfg9lpFTEnD09Ce3UjnJjIU4mupxoCFu8QAvD_BwE';"></div>
+            </div>
+        </div>
+
+        <div class="about-container second">
+
+            <div class="left-side-p-container second">
+                <h1 class="about-title-left second"> So what is HealthTrack?</h1>
+                <p class="left-side-paragraph second">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            </div>
+
+            <div class="right-side-p-container second">
+                <h1 class="about-title-right second"> What do we hope to achieve?</h1>
+                <p class="right-side-paragraph second">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bottom-container">
+
+    </div>
+
+{% endblock %}

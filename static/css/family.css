@@ -1,0 +1,197 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.main-container{
+    width: auto;
+    height: 77.5vh;
+    background: #f8e5bb;
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px 150px ;
+    gap: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+.title-container{
+    width: auto;
+    height: 15vh;
+    background: #4d3a4b;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    text-align: left;
+    font-size: 25px;
+}
+
+.info-box{
+    border: 2px solid #000000;
+    text-align: left;
+    padding-left: 5px;
+    background: #FFFFFF;
+    grid-column-end: span 2;
+    grid-row-end: span 4;
+}
+
+.h1-main{
+    color: azure;
+    padding-left: 20px;
+    margin-top: 30px;
+}
+
+img{
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#fnotif {
+    grid-column-start: 5;
+    grid-row-start: 1;
+    grid-column-end: span 5;
+    grid-row-end: span 4;
+}
+
+#pnotif {
+    grid-column-start: 7;
+    grid-row-start: 1;
+    grid-column-end: span 3;
+    grid-row-end: span 4;
+}
+
+#docs {
+    grid-column-start: 1;
+    grid-row-start: 3;
+    grid-column-end: span 2;
+    grid-row-end: span 2;
+}
+
+#info {
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: span 2;
+    grid-row-end: span 2;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+tr {
+  border-bottom: 1px solid #ddd;
+  height: 50px;
+}
+
+/* Prescription form styling */
+.input-form {
+    margin-top: 20px;
+}
+
+.input-form input,
+.input-form select,
+.input-form button {
+    margin-bottom: 10px;
+}
+
+.input-form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Prescription list styling */
+.input-list {
+    list-style-type: none;
+    padding: 0;
+    max-height: 80%; /* Set a maximum height */
+    overflow-y: auto;  /* Enable vertical scrolling */
+}
+
+/* Nearest facility list styling */
+.input-list2 {
+    list-style-type: none;
+    padding: 0;
+    max-height: 350px; /* Set a maximum height */
+    overflow-y: auto;  /* Enable vertical scrolling */
+}
+
+.input-item {
+    margin-bottom: 2px;
+    padding: 2px;
+    border: 1px solid #ccc;
+    border-radius: 1px;
+}
+
+.input-item h4{
+    margin: 4px;
+    font-size: 17px;
+}
+
+.input-item p{
+    margin: 2px;
+    font-size: 14px;
+}
+
+/* Button styling */
+.button-primary {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.button-primary:hover {
+    background-color: #0056b3;
+}
+
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.filter-options {
+    display: flex;
+    gap: 10px;
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

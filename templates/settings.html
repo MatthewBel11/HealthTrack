@@ -1,0 +1,106 @@
+{% extends "navbar.html" %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/settings.css') }}">
+    <title>Account Settings</title>
+</head>
+<body>
+    <div class="main-container">
+        <div class="settings-container account">
+            <h1 class="title account">Account Settings</h1>
+
+            <div class="user-info">
+                <div class="info-group">
+                    <label>First Name: </label>
+                    <div>{{ userInfo.firstname }}</div>
+                </div>
+                <div class="info-group">
+                    <label>Last Name: </label>
+                    <div>{{ userInfo.surname }}</div>
+                </div>
+                <div class="info-group">
+                    <label>Email: </label>
+                    <div>{{ userInfo.email }}</div>
+                </div>
+                <div class="info-group">
+                    <label>Telephone No: </label>
+                    <div>{{ userInfo.phone }}</div>
+                </div>
+                <div class="info-group">
+                    <label>D.O.B: </label>
+                    <div>{{ userInfo.birthday }}</div>
+                </div>
+                <div class="info-group">
+                    <label>Age: </label>
+                    <div>{{ userInfo.age }}</div>
+                </div>
+                <div class="info-group">
+                    <label>User ID: </label>
+                    <div>{{ userInfo.user_id }}</div>
+                </div>
+            </div>
+
+            <form action="{{ url_for('auth.logout') }}" method="get">
+                <button type="submit" class="sign-out button">Log Out</button>
+            </form>
+            <button id="changePasswordButton" class="change-pass button">Change Password</button>
+        </div>
+    </div>
+
+
+    <div id="passwordChangeModal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Change Password</h2>
+            <form id="changePasswordForm" action="{{ url_for('auth.change_password') }}" method="post">
+                <div class="modal-group">
+                    <label>Current Password:</label>
+                    <input type="password" name="current_password" required>
+                </div>
+                <div class="modal-group">
+                    <label>New Password:</label>
+                    <input type="password" name="new_password" required>
+                </div>
+                <div class="modal-group">
+                    <label>Confirm New Password:</label>
+                    <input type="password" name="confirm_password" required>
+                </div>
+                <button type="submit" class="change-password">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+
+        var modal = document.getElementById("passwordChangeModal");
+
+
+        var btn = document.getElementById("changePasswordButton");
+
+
+        var span = document.getElementsByClassName("close")[0];
+
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
+{% endblock %}

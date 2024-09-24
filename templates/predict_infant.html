@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Infant Mortality Rate</title>
+</head>
+<body>
+    <h1>Predict Infant Mortality Rate</h1>
+    <form id="predictionForm" action="/predict_infant_mortality" method="post">
+        <label for="Healthcare_Access">Healthcare Access %:</label>
+        <input type="number" id="Healthcare_Access" name="Healthcare_Access %" required><br>
+
+        <label for="Income_Level">Income Level:</label>
+        <input type="number" id="Income_Level" name="Income_Level" required><br>
+
+        <label for="Education_Level">Education Level %:</label>
+        <input type="number" id="Education_Level" name="Education_Level %" required><br>
+
+        <label for="Vaccination_Rate">Vaccination Rate %:</label>
+        <input type="number" id="Vaccination_Rate" name="Vaccination_Rate %" required><br>
+
+        <label for="Antenatal_Care">Antenatal Care %:</label>
+        <input type="number" id="Antenatal_Care" name="Antenatal_Care %" required><br>
+
+        <label for="Health_Expenditure">Health Expenditure %:</label>
+        <input type="number" id="Health_Expenditure" name="Health_Expenditure %" required><br>
+
+        <label for="Urbanization_Rate">Urbanization Rate %:</label>
+        <input type="number" id="Urbanization_Rate" name="Urbanization_Rate %" required><br>
+
+        <label for="Nutrition_Level">Nutrition Level %:</label>
+        <input type="number" id="Nutrition_Level" name="Nutrition_Level %" required><br>
+
+        <label for="Sanitation_Facilities">Sanitation Facilities %:</label>
+        <input type="number" id="Sanitation_Facilities" name="Sanitation_Facilities %" required><br>
+
+        <label for="Age_of_Mother">Age of Mother:</label>
+        <input type="number" id="Age_of_Mother" name="Age_of_Mother" required><br>
+
+        <label for="Birth_Rate">Birth Rate %:</label>
+        <input type="number" id="Birth_Rate" name="Birth_Rate %" required><br>
+
+        <label for="Female_Literacy_Rate">Female Literacy Rate %:</label>
+        <input type="number" id="Female_Literacy_Rate" name="Female_Literacy_Rate %" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <h2 id="result"></h2>
+
+    <script>
+        document.getElementById('predictionForm').onsubmit = async function(event) {
+            event.preventDefault();
+            const form = event.target;
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData.entries());
+
+            const response = await fetch(form.action, {
+                method: form.method,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            const result = await response.json();
+            if (response.ok) {
+                document.getElementById('result').innerText = `Predicted Infant Mortality Rate: ${result.predicted_infant_mortality_rate}`;
+            } else {
+                document.getElementById('result').innerText = `Error: ${result.error}`;
+            }
+        };
+    </script>
+</body>
+</html>

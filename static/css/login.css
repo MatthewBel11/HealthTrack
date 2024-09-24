@@ -1,0 +1,125 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.left-side {
+    background: #f8e5bb;
+    width: 50%;
+    height: 95vh;
+}
+
+.welcome-container {
+    display: flex;
+    flex-direction: column;
+    font-family: 'IBM Plex Sans', sans-serif;
+    width: 40%;
+    height: 60%;
+    margin-top: 16%;
+    margin-left: auto;
+    background: #4d3a4b;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    font-weight: bold;
+}
+
+.welcome-message {
+    font-size: 50px;
+    padding: 0;
+    margin: 0;
+    margin-top: 10%;
+    color: #FFFFFF;
+}
+
+.right-side {
+   background: #f8e5bb;
+    width: 50%;
+    height: 95vh;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 16%;
+    background: #FFFFFF;
+    width: 40%;
+    height: 60%;
+    text-align: center;
+    font-weight: bold;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    display: block;
+    color: #333;
+    margin-top: 20px;
+}
+
+input[type="username"],
+input[type="password"],
+input[type="submit"] {
+    background: #e8e8e8;
+    padding: 10px;
+    width: 80%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.account-message {
+    margin-top: 50%;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 30px;
+}
+
+.sign-up {
+    margin: 0 auto;
+    width: 50%;
+    height: 35px;
+    background-color: #007bff;
+    border-radius: 10px;
+    border: 1px solid #007bff;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+
+.sign-up:hover {
+    background-color: #0056b3;
+    border: 1px solid #0056b3;
+}
+
+.login-title {
+    font-weight: 500;
+    font-size: 30px;
+    color: #000000;
+    margin-top: 10%;
+    margin-bottom: 10%;
+}

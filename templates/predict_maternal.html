@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Maternal Mortality</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Predict Maternal Mortality Rate</h1>
+    <form id="predictionForm">
+        <label for="Skilled_Birth_Attendants">Skilled Birth Attendants:</label>
+        <input type="number" id="Skilled_Birth_Attendants" name="Skilled_Birth_Attendants"><br><br>
+
+        <label for="Healthcare_Access">Healthcare Access:</label>
+        <input type="number" id="Healthcare_Access" name="Healthcare_Access"><br><br>
+
+        <label for="Income_Level">Income Level:</label>
+        <input type="number" id="Income_Level" name="Income_Level"><br><br>
+
+        <label for="Education_Level">Education Level %:</label>
+        <input type="number" id="Education_Level" name="Education_Level %"><br><br>
+
+        <label for="Maternal_Health_Services">Maternal Health Services %:</label>
+        <input type="number" id="Maternal_Health_Services" name="Maternal Health Services %"><br><br>
+
+        <label for="Contraceptive_Prevalence">Contraceptive Prevalence %:</label>
+        <input type="number" id="Contraceptive_Prevalence" name="Contraceptive Prevalence %"><br><br>
+
+        <label for="Antenatal_Care">Antenatal Care %:</label>
+        <input type="number" id="Antenatal_Care" name="Antenatal Care %"><br><br>
+
+        <label for="Health_Expenditure">Health Expenditure %:</label>
+        <input type="number" id="Health_Expenditure" name="Health Expenditure %"><br><br>
+
+        <label for="Urbanization_Rate">Urbanization Rate %:</label>
+        <input type="number" id="Urbanization_Rate" name="Urbanization Rate %"><br><br>
+
+        <label for="Nutrition_Level">Nutrition Level %:</label>
+        <input type="number" id="Nutrition_Level" name="Nutrition Level %"><br><br>
+
+        <label for="Sanitation_Facilities">Sanitation Facilities %:</label>
+        <input type="number" id="Sanitation_Facilities" name="Sanitation Facilities %"><br><br>
+
+        <label for="Age_of_Mother">Age of Mother:</label>
+        <input type="number" id="Age_of_Mother" name="Age of Mother"><br><br>
+
+        <label for="Birth_Rate">Birth Rate %:</label>
+        <input type="number" id="Birth_Rate" name="Birth Rate %"><br><br>
+
+        <label for="Female_Literacy_Rate">Female Literacy Rate %:</label>
+        <input type="number" id="Female_Literacy_Rate" name="Female Literacy Rate %"><br><br>
+
+        <button type="button" onclick="submitPrediction()">Predict</button>
+    </form>
+    <p id="result"></p>
+    <canvas id="predictionChart" width="400" height="200"></canvas>
+
+    <script>
+        function submitPrediction() {
+            const formData = {
+                'Skilled_Birth_Attendants': parseFloat(document.getElementById('Skilled_Birth_Attendants').value),
+                'Healthcare_Access': parseFloat(document.getElementById('Healthcare_Access').value),
+                'Income_Level': parseFloat(document.getElementById('Income_Level').value),
+                'Education_Level %': parseFloat(document.getElementById('Education_Level').value),
+                'Maternal_Health_Services %': parseFloat(document.getElementById('Maternal_Health_Services').value),
+                'Contraceptive_Prevalence %': parseFloat(document.getElementById('Contraceptive_Prevalence').value),
+                'Antenatal_Care %': parseFloat(document.getElementById('Antenatal_Care').value),
+                'Health_Expenditure %': parseFloat(document.getElementById('Health_Expenditure').value),
+                'Urbanization_Rate %': parseFloat(document.getElementById('Urbanization_Rate').value),
+                'Nutrition_Level %': parseFloat(document.getElementById('Nutrition_Level').value),
+                'Sanitation_Facilities %': parseFloat(document.getElementById('Sanitation_Facilities').value),
+                'Age_of_Mother': parseFloat(document.getElementById('Age_of_Mother').value),
+                'Birth_Rate %': parseFloat(document.getElementById('Birth_Rate').value),
+                'Female_Literacy_Rate %': parseFloat(document.getElementById('Female_Literacy_Rate').value)
+            };
+
+            fetch('/predict_maternal_mortality', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    document.getElementById('result').innerText = `Error: ${data.error}`;
+                } else {
+                    document.getElementById('result').innerText = `Predicted Maternal Mortality Rate: ${data.predicted_maternal_mortality_rate}`;
+                    plotChart(data.years, data.predictions, data.targets);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('result').innerText = 'Error occurred. Please try again.';
+            });
+        }
+
+        function plotChart(years, predictions, targets) {
+            const ctx = document.getElementById('predictionChart').getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: years,
+                    datasets: [{
+                        label: 'Predicted MMR',
+                        data: predictions,
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1,
+                        fill: false
+                    }, {
+                        label: 'Target MMR',
+                        data: targets,
+                        borderColor: 'rgba(255, 99, 132, 1)',
+                        borderWidth: 1,
+                        borderDash: [5, 5],
+                        fill: false
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

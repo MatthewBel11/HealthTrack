@@ -1,0 +1,10 @@
+- Attempted login at 9:00pm user: xyz
+- Attempted login at 10:00pm user: xyz
+- Attempt to access admin page at 10:00pm user: xyz
+- Attempt to access admin page at 10:01pm user: xyz
+- Attempt to access admin page at 10:02pm user: xyz
+- Attempt to access admin page at 10:03pm user: xyz
+- Account locked, password attempt limit reached: 11:43pm user: xyz
+- Attempted access to family page without being logged in at 5:43am, I.P: 123.212.000
+- Attempted access to family page without being logged in at 5:45am, I.P: 123.212.000
+- Attempted access to family page without being logged in at 6:21am, I.P: 123.212.000

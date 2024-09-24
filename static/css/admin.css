@@ -1,0 +1,156 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 95vh;
+    background: #f8e5bb;
+}
+
+.top-sub-container {
+    display: flex;
+    width: 100%;
+    height: 15vh;
+}
+
+.sub-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 80vh;
+}
+
+.title {
+    font-size: 50px;
+    margin: 2.5% auto;
+    color: #000000;
+}
+
+.left-side {
+    width: 30%;
+    height: 70vh;
+    background: #4d3a4b;
+    margin: auto;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 70vh;
+    background: #4d3a4b;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.search-bar-form {
+    width: 80%;
+    height: 8vh;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.search-bar-form .form-group {
+    display: flex;
+    width: 100%;
+}
+
+.search-bar-form input[type="text"] {
+    width: calc(100% - 20%); /* Adjust width to accommodate button */
+    box-sizing: border-box;
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+}
+
+.button {
+    width: 20%;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    font-size: 16px;
+    margin-top: 15px;
+}
+
+.button:hover{
+    background-color: #0056b3;
+}
+
+
+.user-info-form {
+    width: 80%;
+}
+
+.user-info-form .form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.log-container {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+}
+
+.log-entry {
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre-wrap; /* Ensures log formatting is preserved */
+}
+
+.recent-log{
+    margin: auto;
+    font-size: 30px;
+    color: #FFFFFF;
+}
+
+.info-group{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    width: 80%;
+    height: 5%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 4%;
+    background: #ffffff;
+}
+
+.user-info{
+    height: 80%;
+    width: 100%;
+}

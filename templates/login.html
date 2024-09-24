@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+</head>
+
+{% extends "navbar.html" %}
+
+{% block content %}
+
+<body>
+    <div class="main-container">
+        <div class="left-side">
+            <div class="welcome-container">
+                <p class="welcome-message"> Welcome to <br> HealthTrack</p>
+                <p class="account-message">Don't have an account?</p>
+                <a href="/sign-up">
+                <button class="sign-up">Sign Up!</button>
+                </a>
+            </div>
+        </div>
+
+        <div class="right-side">
+            <div class="form-container">
+                <div class="login-title">Login to your account:</div>
+
+                {% if form %}
+                    <form method="POST">
+                        <div>
+                            <div>
+                                {{ form.csrf_token }}
+                                <label for="username">Username:</label><br>
+                                {{ form.username(type='username') }}
+                                {% for error in form.username.errors %}
+                                    {{ error }}
+                                {% endfor %}<br><br>
+                            </div>
+
+                            <div>
+                                <label for="password">Password:</label><br>
+                                {{ form.password(type='password') }}
+                                {% for error in form.password.errors %}
+                                    {{ error }}
+                                {% endfor %}<br><br>
+                            </div>
+
+                            <div>
+                                {{ form.submit(type='submit') }}
+                            </div>
+                        </div>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+
+{% endblock %}
+
+</html>

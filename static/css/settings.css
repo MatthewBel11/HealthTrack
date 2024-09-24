@@ -1,0 +1,153 @@
+.body{
+    display: flex;
+}
+
+h1{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px;
+    color: #ffffff;
+    margin-top: 2%;
+}
+
+.main-container{
+    height: 95vh;
+    width: 100%;
+    background: #f8e5bb;
+    display: flex;
+    flex-direction: row;
+}
+
+.settings-container{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    height: 90%;
+    width: 25%;
+    background: #4d3a4b;
+    border-radius: 10px;
+}
+
+.background-container{
+    margin: auto auto;
+    border-radius: 5px;
+    height: 80%;
+    width: 75%;
+}
+
+label{
+    font-weight: bold;
+}
+
+.info-group{
+    margin: auto;
+    width: 80%;
+    height: 5%;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 6%;
+    background: #ffffff;
+}
+
+.user-info{
+    height: 80%;
+    width: 100%;
+}
+
+.button {
+    display: inline-block;  /* Added for better form handling */
+    margin: 10px auto;      /* Adjusted margin for consistency */
+    padding: 10px;          /* Added padding for better appearance */
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 80%;
+    height: auto;           /* Changed height to auto for better flexibility */
+    border-radius: 5px;
+    text-align: center;     /* Center align text */
+    font-size: 16px;        /* Adjust font size if needed */
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+form{
+    display: flex;
+}
+.sign-out{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* The Modal (background) */
+.modal {
+    flex-direction: column;
+    display: flex; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    text-align: center;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; /* Could be more or less, depending on screen size */
+    border-radius: 10px;
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.change-password{
+    background-color: #007bff;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 5%;
+    height: 4%;
+    margin: auto;
+}
+
+.change-password:hover{
+    background-color: #0056b3;
+}
+
+h2{
+    padding: 5px;
+}
+
+.modal-group{
+    margin: auto;
+    padding: 5px;
+}
+
+#changePasswordForm{
+    display: flex;
+    flex-direction: column;
+}

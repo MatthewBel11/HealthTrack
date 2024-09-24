@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HealthTrack</title>
+    <link rel="stylesheet" href="../static/css/admin.css">
+</head>
+
+{% extends "navbar.html" %}
+
+{% block content %}
+
+<body>
+
+<div class="main-container">
+
+    <div class="top-sub-container">
+        <h1 class="title">ADMIN PAGE</h1>
+    </div>
+
+    <div class="sub-container">
+
+        <div class='left-side'>
+
+            <form class="search-bar-form" action="{{ url_for('account.adminPage') }}" method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <input type="text" id="search-bar" name="search" placeholder="Search for a user using their ID, Phone No or Email...">
+                <button type="submit" class="button">Search</button>
+            </div>
+            </form>
+
+            <div class="user-info">
+                <div class="info-group">
+                    <label>User ID: </label>
+                    <div>{{ search_results.user_id }}</div>
+                </div>
+                <div class="info-group">
+                    <label>First Name: </label>
+                    <div>{{ search_results.firstname }}</div>
+                </div>
+                <div class="info-group">
+                    <label>Last Name: </label>
+                    <div>{{ search_results.surname }}</div>
+                </div>
+                <div class="info-group">
+                    <label>Email: </label>
+                    <div>{{ search_results.email }}</div>
+                </div>
+                <div class="info-group">
+                    <label>Telephone No: </label>
+                    <div>{{ search_results.phone }}</div>
+                </div>
+                <div class="info-group">
+                    <label>D.O.B: </label>
+                    <div>N/A</div>
+                </div>
+
+                <div class="info-group">
+                    <label>Age: </label>
+                    <div>N/A</div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class='right-side'>
+            <h2 class="recent-log">Recent Log Entries</h2>
+            <div class="log-container">
+                {% for line in log_lines %}
+                <div class="log-entry">{{ line }}</div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+</div>
+</div>
+
+</body>
+
+{% endblock %}
+</html>

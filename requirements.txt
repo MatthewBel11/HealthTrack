@@ -1,0 +1,14 @@
+flask
+requests
+geopy
+geocoder
+wtforms
+flask_wtf
+flask_login
+flask_sqlalchemy
+python_dotenv
+email_validator
+firebase_admin
+pyrebase4
+joblib
+numpy

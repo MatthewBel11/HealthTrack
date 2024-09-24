@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/errorPages.css') }}">
+    <title>Page 404</title>
+</head>
+
+{% extends "navbar.html" %}
+
+{% block content %}
+
+<body>
+<div class="main-container">
+    <div class="center-container">
+
+        <div class="error-code-container">
+            <span class="black">4</span><span class="grey">0</span><span class="black">4</span>
+        </div>
+
+
+        <h1 class="error-title">OOPS! SOMETHING WENT WRONG</h1>
+
+        <h3 class="error-message">
+            The page you requested wasn't found - 404
+            <br>
+            If you think this is an error, let us know!
+        </h3>
+
+        <div class="home-container" onclick="window.location.href = '/';"><p>Return Home</p></div>
+        <div class="report-container" onclick="window.location.href = '';"><p>Report Problem</p></div>
+
+    </div>
+</div>
+
+</body>
+
+{% endblock %}
+
+</html>
